@@ -108,7 +108,15 @@ enum QuickNewURLHandler {
             let result = try service.create(kind, in: directory)
             NSWorkspace.shared.activateFileViewerSelecting([result.url])
         } catch {
-            NSLog("[QuickNew] File creation failed: \(error)")
+            let alert = NSAlert()
+            alert.alertStyle = .warning
+            alert.messageText = L10n.string("finder.error.create.title")
+            alert.informativeText = error.localizedDescription
+            if let recovery = (error as? FileCreationError)?.recoverySuggestion {
+                alert.informativeText += "\n\n" + recovery
+            }
+            alert.addButton(withTitle: L10n.string("common.ok"))
+            alert.runModal()
         }
     }
 }

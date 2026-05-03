@@ -9,9 +9,7 @@ final class FinderSyncController: FIFinderSync {
         .folder, .text, .markdown, .richText, .word, .excel, .powerpoint, .csv,
     ]
 
-    private let fileCreationService = FileCreationService(
-        authorizationStore: DirectoryAuthorizationStore(store: .sharedForExtension)
-    )
+    private let authStore = DirectoryAuthorizationStore(store: .sharedForExtension)
 
     // MARK: - Init
 
@@ -64,24 +62,57 @@ final class FinderSyncController: FIFinderSync {
 
     @objc func createFile(_ sender: NSMenuItem) {
         guard let rawValue = sender.representedObject as? String,
-              let kind = MenuItemKind(rawValue: rawValue) else {
-            NSLog("[QuickNew] Invalid menu item")
-            return
-        }
-        guard let targetDir = resolveTargetDirectory() else {
-            NSLog("[QuickNew] Cannot determine target directory")
-            return
+              let kind = MenuItemKind(rawValue: rawValue) else { return }
+        guard let targetDir = resolveTargetDirectory() else { return }
+
+        // Has bookmark → try creating file directly
+        if authStore.hasSavedAuthorizationCovering(targetDir) {
+            let service = FileCreationService(authorizationStore: authStore)
+            do {
+                let result = try service.create(kind, in: targetDir)
+                NSWorkspace.shared.activateFileViewerSelecting([result.url])
+                return
+            } catch let error as FileCreationError where error.requiresDirectoryAuthorization {
+                // Bookmark is stale or invalid → need to re-authorize via main app
+                NSLog("[QuickNew] Authorization stale for %@ — falling back to URL scheme", targetDir.path)
+            } catch {
+                // Other error → show alert in Finder
+                showAlert(title: L10n.string("finder.error.create.title"),
+                          message: error.localizedDescription,
+                          recovery: (error as? FileCreationError)?.recoverySuggestion)
+                return
+            }
         }
 
-        do {
-            let result = try fileCreationService.create(kind, in: targetDir)
-            NSWorkspace.shared.activateFileViewerSelecting([result.url])
-        } catch {
-            NSLog("[QuickNew] Failed to create %@: %@", kind.title, error.localizedDescription)
-        }
+        // No bookmark or stale bookmark → open URL scheme to main app for authorization
+        openURLScheme(kind: kind, directory: targetDir)
     }
 
     // MARK: - Helpers
+
+    private func openURLScheme(kind: MenuItemKind, directory: URL) {
+        guard let url = URL(string: "quicknew://create?kind=\(kind.rawValue)&dir=\(directory.path)") else { return }
+        NSLog("[QuickNew] Opening URL scheme: %@", url.absoluteString)
+        let opened = NSWorkspace.shared.open(url)
+        if !opened {
+            // URL scheme failed → show error
+            showAlert(title: L10n.string("finder.error.create.title"),
+                      message: L10n.string("file.error.permission_required"),
+                      recovery: L10n.string("file.error.permission_required.recovery"))
+        }
+    }
+
+    private func showAlert(title: String, message: String, recovery: String?) {
+        let alert = NSAlert()
+        alert.alertStyle = .warning
+        alert.messageText = title
+        alert.informativeText = message
+        if let recovery {
+            alert.informativeText += "\n\n" + recovery
+        }
+        alert.addButton(withTitle: L10n.string("common.ok"))
+        alert.runModal()
+    }
 
     private func resolveTargetDirectory() -> URL? {
         let controller = FIFinderSyncController.default()
