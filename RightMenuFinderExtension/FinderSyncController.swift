@@ -9,8 +9,6 @@ final class FinderSyncController: FIFinderSync {
         .folder, .text, .markdown, .richText, .word, .excel, .powerpoint, .csv,
     ]
 
-    private let fileCreationService = FileCreationService()
-
     // MARK: - Init
 
     override init() {
@@ -67,19 +65,16 @@ final class FinderSyncController: FIFinderSync {
             return
         }
 
-        let didAccess = targetDir.startAccessingSecurityScopedResource()
-        defer {
-            if didAccess {
-                targetDir.stopAccessingSecurityScopedResource()
-            }
-        }
+        var components = URLComponents()
+        components.scheme = "quicknew"
+        components.host = "create"
+        components.queryItems = [
+            URLQueryItem(name: "kind", value: kind.rawValue),
+            URLQueryItem(name: "dir", value: targetDir.path),
+        ]
 
-        do {
-            let result = try fileCreationService.create(kind, in: targetDir)
-            NSWorkspace.shared.activateFileViewerSelecting([result.url])
-        } catch {
-            NSLog("[QuickNew] Failed to create %@: %@", kind.title, error.localizedDescription)
-        }
+        guard let url = components.url else { return }
+        NSWorkspace.shared.open(url)
     }
 
     // MARK: - Helpers
