@@ -40,8 +40,7 @@ final class FinderSyncController: FIFinderSync {
                 action: #selector(createFile(_:)),
                 keyEquivalent: ""
             )
-            item.representedObject = kind
-            item.target = self
+            item.representedObject = kind.rawValue
             item.image = MenuItemIcon.nsImage(for: kind, size: NSSize(width: 16, height: 16))
             submenu.addItem(item)
         }
@@ -59,22 +58,25 @@ final class FinderSyncController: FIFinderSync {
     // MARK: - Actions
 
     @objc private func createFile(_ sender: NSMenuItem) {
-        guard let kind = sender.representedObject as? MenuItemKind else { return }
+        guard let rawValue = sender.representedObject as? String,
+              let kind = MenuItemKind(rawValue: rawValue) else {
+            NSLog("[QuickNew] Invalid menu item")
+            return
+        }
         guard let targetDir = resolveTargetDirectory() else {
             NSLog("[QuickNew] Cannot determine target directory")
             return
         }
 
-        var components = URLComponents()
-        components.scheme = "quicknew"
-        components.host = "create"
-        components.queryItems = [
-            URLQueryItem(name: "kind", value: kind.rawValue),
-            URLQueryItem(name: "dir", value: targetDir.path),
-        ]
+        let urlStr = "quicknew://create?kind=\(kind.rawValue)&dir=\(targetDir.path)"
+        guard let url = URL(string: urlStr) else {
+            NSLog("[QuickNew] Failed to create URL")
+            return
+        }
 
-        guard let url = components.url else { return }
-        NSWorkspace.shared.open(url)
+        NSLog("[QuickNew] Opening URL: \(urlStr)")
+        let result = NSWorkspace.shared.open(url)
+        NSLog("[QuickNew] NSWorkspace.open result: \(result)")
     }
 
     // MARK: - Helpers

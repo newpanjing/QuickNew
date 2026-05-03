@@ -15,17 +15,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     func application(_ application: NSApplication, open urls: [URL]) {
         guard let url = urls.first, url.scheme == "quicknew" else { return }
-
-        NSApp.setActivationPolicy(.accessory)
-        for window in NSApp.windows {
-            window.orderOut(nil)
-        }
-        NSApp.activate(ignoringOtherApps: true)
-
-        QuickNewURLHandler.handle(url)
-
-        NSApp.setActivationPolicy(.regular)
-        NSApp.hide(nil)
+        handleQuickNewURL(url)
     }
 }
 
@@ -47,6 +37,9 @@ struct RightMenuApp: App {
                 .onReceive(NotificationCenter.default.publisher(for: L10n.languageChangedNotification)) { _ in
                     language.refreshText()
                 }
+                .onOpenURL { url in
+                    handleQuickNewURL(url)
+                }
         }
         .windowStyle(.hiddenTitleBar)
 
@@ -62,18 +55,40 @@ struct RightMenuApp: App {
     }
 }
 
+// MARK: - URL Handling
+
+@MainActor
+private func handleQuickNewURL(_ url: URL) {
+    guard url.scheme == "quicknew" else { return }
+
+    NSApp.setActivationPolicy(.accessory)
+    for window in NSApp.windows {
+        window.orderOut(nil)
+    }
+    NSApp.activate(ignoringOtherApps: true)
+
+    QuickNewURLHandler.handle(url)
+
+    NSApp.setActivationPolicy(.regular)
+    NSApp.hide(nil)
+}
+
 // MARK: - URL Handler
 
 @MainActor
 enum QuickNewURLHandler {
     static func handle(_ url: URL) {
-        guard url.scheme == "quicknew", url.host == "create" else { return }
+        guard url.host == "create" else { return }
 
         guard let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
               let kindParam = components.queryItems?.first(where: { $0.name == "kind" })?.value,
               let kind = MenuItemKind(rawValue: kindParam),
-              let dirParam = components.queryItems?.first(where: { $0.name == "dir" })?.value else { return }
+              let dirParam = components.queryItems?.first(where: { $0.name == "dir" })?.value else {
+            NSLog("[QuickNew] Invalid URL parameters")
+            return
+        }
 
+        NSLog("[QuickNew] Creating \(kind.rawValue) in \(dirParam)")
         let directory = URL(fileURLWithPath: dirParam)
 
         // If directory is not yet authorized, prompt once via NSOpenPanel
@@ -109,6 +124,7 @@ enum QuickNewURLHandler {
         do {
             let service = FileCreationService(authorizationStore: DirectoryAuthorizationStore.shared)
             let result = try service.create(kind, in: directory)
+            NSLog("[QuickNew] Created: \(result.url.path)")
             NSWorkspace.shared.activateFileViewerSelecting([result.url])
         } catch {
             NSLog("[QuickNew] File creation failed: \(error)")
