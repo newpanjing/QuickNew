@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">QuickNew macOS Finder context menu app overview</title>
+  <desc id="desc">QuickNew lets users create common files and folders from Finder and the desktop context menu, with sandbox-friendly Security-Scoped Bookmarks.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7f9fc"/>
+      <stop offset="1" stop-color="#edf2f7"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a84ff"/>
+      <stop offset="1" stop-color="#30d158"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#1d2733" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="720" rx="0" fill="url(#bg)"/>
+
+  <g transform="translate(78 72)">
+    <text x="0" y="0" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif" font-size="52" font-weight="700" fill="#17202a">QuickNew</text>
+    <text x="0" y="48" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', sans-serif" font-size="22" fill="#5f6b7a">A sandbox-friendly macOS Finder extension for creating files instantly.</text>
+  </g>
+
+  <g transform="translate(78 166)" filter="url(#shadow)">
+    <rect width="452" height="418" rx="16" fill="#ffffff"/>
+    <rect x="0" y="0" width="452" height="56" rx="16" fill="#f6f7f9"/>
+    <circle cx="26" cy="28" r="7" fill="#ff5f57"/>
+    <circle cx="50" cy="28" r="7" fill="#ffbd2e"/>
+    <circle cx="74" cy="28" r="7" fill="#28c840"/>
+
+    <text x="28" y="98" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="18" font-weight="700" fill="#1c1c1e">Finder Context Menu</text>
+    <rect x="28" y="120" width="396" height="1" fill="#e5e7eb"/>
+
+    <g font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="17" fill="#20252b">
+      <g transform="translate(36 158)">
+        <rect x="0" y="-17" width="380" height="42" rx="8" fill="#f4f8ff"/>
+        <text x="46" y="9" font-weight="600">New</text>
+        <path d="M20 -6 h16 a4 4 0 0 1 4 4 v18 a4 4 0 0 1-4 4 h-24 a4 4 0 0 1-4-4 v-18 a4 4 0 0 1 4-4 h5 l3 -5 h9 z" fill="#0a84ff"/>
+      </g>
+      <g transform="translate(82 214)">
+        <text x="38" y="7">New Markdown</text>
+        <rect x="0" y="-16" width="24" height="28" rx="3" fill="#ffffff" stroke="#cfd8e3"/>
+        <text x="5" y="5" font-size="10" font-weight="700" fill="#596579">MD</text>
+      </g>
+      <g transform="translate(82 260)">
+        <text x="38" y="7">New TXT</text>
+        <rect x="0" y="-16" width="24" height="28" rx="3" fill="#ffffff" stroke="#cfd8e3"/>
+        <path d="M6 -7 h12 M6 0 h12 M6 7 h9" stroke="#7b8794" stroke-width="2"/>
+      </g>
+      <g transform="translate(82 306)">
+        <text x="38" y="7">New Excel</text>
+        <rect x="0" y="-16" width="24" height="28" rx="3" fill="#e8f8ef" stroke="#b9e8ca"/>
+        <text x="7" y="5" font-size="13" font-weight="800" fill="#168a42">X</text>
+      </g>
+      <g transform="translate(82 352)">
+        <text x="38" y="7">New JSON</text>
+        <rect x="0" y="-16" width="24" height="28" rx="3" fill="#fff7e8" stroke="#f0d39a"/>
+        <text x="6" y="5" font-size="12" font-weight="800" fill="#b56b00">{}</text>
+      </g>
+    </g>
+  </g>
+
+  <g transform="translate(588 166)" filter="url(#shadow)">
+    <rect width="614" height="418" rx="16" fill="#ffffff"/>
+    <text x="34" y="54" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="22" font-weight="700" fill="#1c1c1e">Designed for macOS</text>
+    <text x="34" y="88" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="16" fill="#697586">SwiftUI main app, Finder Sync extension, App Sandbox, App Group sharing.</text>
+
+    <g transform="translate(34 126)">
+      <rect width="546" height="70" rx="10" fill="#f7fbff" stroke="#dbeafe"/>
+      <circle cx="35" cy="35" r="14" fill="#0a84ff"/>
+      <path d="M28 35 l5 5 l10 -12" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="66" y="30" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="17" font-weight="700" fill="#1f2937">Security-Scoped Bookmarks</text>
+      <text x="66" y="53" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="14" fill="#6b7280">Remember user-approved folders for App Store sandboxing.</text>
+    </g>
+
+    <g transform="translate(34 216)">
+      <rect width="546" height="70" rx="10" fill="#f7fff9" stroke="#dcfce7"/>
+      <circle cx="35" cy="35" r="14" fill="#30d158"/>
+      <path d="M28 35 l5 5 l10 -12" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="66" y="30" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="17" font-weight="700" fill="#1f2937">Visible Item Controls</text>
+      <text x="66" y="53" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="14" fill="#6b7280">Enable, disable, and drag-sort file types shown in Finder.</text>
+    </g>
+
+    <g transform="translate(34 306)">
+      <rect width="546" height="70" rx="10" fill="#fffaf3" stroke="#ffedd5"/>
+      <circle cx="35" cy="35" r="14" fill="#ff9f0a"/>
+      <path d="M28 35 l5 5 l10 -12" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="66" y="30" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="17" font-weight="700" fill="#1f2937">Localized Experience</text>
+      <text x="66" y="53" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="14" fill="#6b7280">English, Simplified Chinese, Traditional Chinese, or system language.</text>
+    </g>
+  </g>
+
+  <g transform="translate(78 642)">
+    <rect width="1124" height="1" fill="#d8dee8"/>
+    <text x="0" y="34" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="16" fill="#667085">QuickNew keeps the first screen useful: configure permissions, choose visible file types, and create from Finder immediately.</text>
+  </g>
+</svg>
+

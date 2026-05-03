@@ -1,0 +1,75 @@
+name: RightMenu
+options:
+  bundleIdPrefix: com.panjing
+  deploymentTarget:
+    macOS: "14.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: 6.0
+    MACOSX_DEPLOYMENT_TARGET: 14.0
+    CODE_SIGN_STYLE: Automatic
+    DEVELOPMENT_TEAM: 3AVKA6L8FE
+packages: {}
+targets:
+  RightMenu:
+    type: application
+    platform: macOS
+    sources:
+      - path: RightMenu
+      - path: Shared
+      - path: Resources
+        excludes:
+          - Info.plist
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.panjing.RightMenu
+        PRODUCT_NAME: RightMenu
+        INFOPLIST_FILE: RightMenu/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ENABLE_HARDENED_RUNTIME: true
+        REGISTER_WITH_LAUNCH_SERVICES: false
+      configs:
+        Debug:
+          CODE_SIGN_ENTITLEMENTS: RightMenu/RightMenuDebug.entitlements
+        Release:
+          CODE_SIGN_ENTITLEMENTS: RightMenu/RightMenuAppStore.entitlements
+    dependencies:
+      - target: RightMenuFinderExtension
+        embed: true
+    scheme:
+      testTargets:
+        - RightMenuTests
+  RightMenuFinderExtension:
+    type: app-extension
+    platform: macOS
+    sources:
+      - path: RightMenuFinderExtension
+      - path: Shared
+      - path: Resources
+        excludes:
+          - Info.plist
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.panjing.RightMenu.FinderExtension
+        PRODUCT_NAME: RightMenuFinderExtension
+        INFOPLIST_FILE: RightMenuFinderExtension/Info.plist
+        SKIP_INSTALL: true
+      configs:
+        Debug:
+          CODE_SIGN_ENTITLEMENTS: RightMenuFinderExtension/RightMenuFinderExtensionDebug.entitlements
+        Release:
+          CODE_SIGN_ENTITLEMENTS: RightMenuFinderExtension/RightMenuFinderExtensionAppStore.entitlements
+  RightMenuTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: RightMenuTests
+    dependencies:
+      - target: RightMenu
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.panjing.RightMenuTests
+        GENERATE_INFOPLIST_FILE: true
+        DEVELOPMENT_TEAM: 3AVKA6L8FE
+        CODE_SIGN_IDENTITY: Apple Development

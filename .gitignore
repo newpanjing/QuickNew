@@ -1,0 +1,15 @@
+.DS_Store
+build/
+DerivedData/
+*.xcuserstate
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+*.xcresult
+*.ipa
+*.dSYM/
+*.app
+*.appex
+*.log
+*.swp
+*.tmp
+

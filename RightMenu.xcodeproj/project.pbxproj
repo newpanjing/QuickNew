@@ -1,0 +1,832 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0CDD2FC00743C0B7B2B781E3 /* MenuItemKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF638817574D54193C78BCC5 /* MenuItemKind.swift */; };
+		0F73CC4B7655A38B660E64B8 /* icon-rtf.svg in Resources */ = {isa = PBXBuildFile; fileRef = CCE0E849C7DE6807142D9371 /* icon-rtf.svg */; };
+		1233473C92D127081699B478 /* icon-json.svg in Resources */ = {isa = PBXBuildFile; fileRef = AE9271954E56E57CD7724675 /* icon-json.svg */; };
+		14DE494315ED8789E5BC1C27 /* template-xlsx.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 7809D3060F39AD5F84BE8CBC /* template-xlsx.xlsx */; };
+		160CCF3305B1A4596EE5851C /* icon-md.svg in Resources */ = {isa = PBXBuildFile; fileRef = 1DCA894B45EBC5C99E31BA16 /* icon-md.svg */; };
+		1AB4BE0492051CA3711BFD2A /* DirectoryAuthorizationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D77231A3AE54166D03B4C3B /* DirectoryAuthorizationStore.swift */; };
+		1BFBDC3DCB5914E3E87E81A6 /* icon-file.svg in Resources */ = {isa = PBXBuildFile; fileRef = C1829A7B5ED033FAE816443C /* icon-file.svg */; };
+		208E27826C1A6C0402A571AB /* quicknew-overview.svg in Resources */ = {isa = PBXBuildFile; fileRef = 349F117DE2EF64C54C0AC64A /* quicknew-overview.svg */; };
+		2164C2C078D1591083D75A0B /* icon-docx.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0B56E23823EAC7E614CCFABE /* icon-docx.svg */; };
+		246D0594FCD1D411BEAA91F8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE68CFCA5EAF64247D83056 /* SettingsView.swift */; };
+		2B23AEEEA7E42B9514DAE66D /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D759696713BC33D6F2B6B3F /* AppConstants.swift */; };
+		324AEB2F562AAE3E50CCEEF7 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D759696713BC33D6F2B6B3F /* AppConstants.swift */; };
+		39343730C41743726BFCE979 /* icon-json.svg in Resources */ = {isa = PBXBuildFile; fileRef = AE9271954E56E57CD7724675 /* icon-json.svg */; };
+		3A6C178232B196F0FC0CEF21 /* PreferencesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469FFE81A6648AD10D832E22 /* PreferencesStore.swift */; };
+		3BC14A8785835B2AEAF1588E /* icon-xlsx.svg in Resources */ = {isa = PBXBuildFile; fileRef = 34FD88CA9DEA35CA7F6CFC8F /* icon-xlsx.svg */; };
+		427D83CFBCFC975F14DFF484 /* ExtensionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F15B29BB5E927F1FF5DF82B /* ExtensionManager.swift */; };
+		43C509E987D6070D359B11E9 /* icon-yaml.svg in Resources */ = {isa = PBXBuildFile; fileRef = 33A52770482DE8084FFCD1E6 /* icon-yaml.svg */; };
+		46F998EC9055C1C16284ECE5 /* icon-folder.svg in Resources */ = {isa = PBXBuildFile; fileRef = 718F62F8B97C6FAB3CD8C266 /* icon-folder.svg */; };
+		4A47DFD0BF04B4CDF390F675 /* icon-folder.svg in Resources */ = {isa = PBXBuildFile; fileRef = 718F62F8B97C6FAB3CD8C266 /* icon-folder.svg */; };
+		4DC63F0080F244F6817DBD44 /* icon-txt.svg in Resources */ = {isa = PBXBuildFile; fileRef = B71536419530FCB0585C2396 /* icon-txt.svg */; };
+		563AE025173AEB2AAEE76977 /* template-pptx.pptx in Resources */ = {isa = PBXBuildFile; fileRef = 4498380A06EAE5A7197F3879 /* template-pptx.pptx */; };
+		5CC9605290DBA709771EAAAF /* FileCreationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CF11BBE02066390E604D8C /* FileCreationService.swift */; };
+		5E2C79C0D61215BB48A99533 /* icon-html.svg in Resources */ = {isa = PBXBuildFile; fileRef = 7A31F66AAEB740E39BC84C30 /* icon-html.svg */; };
+		5F0E5CEF9562D12772A709FA /* icon-sh.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4C71C884F55A9B31DDD06D0A /* icon-sh.svg */; };
+		617401D4A06A1203C07EB2D7 /* icon-pptx.svg in Resources */ = {isa = PBXBuildFile; fileRef = 36A979993626A68DF8F730F6 /* icon-pptx.svg */; };
+		678567CCFC9391E2F512240E /* template-docx.docx in Resources */ = {isa = PBXBuildFile; fileRef = 4BE9AC7E66A82066E18E179C /* template-docx.docx */; };
+		74446320EF1B31776D2B593A /* icon-html.svg in Resources */ = {isa = PBXBuildFile; fileRef = 7A31F66AAEB740E39BC84C30 /* icon-html.svg */; };
+		76C62DE1606490DC5EBADBFA /* icon-docx.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0B56E23823EAC7E614CCFABE /* icon-docx.svg */; };
+		79AA5A85608BE08362AD26F9 /* icon-js.svg in Resources */ = {isa = PBXBuildFile; fileRef = BC0F7BD4B3E78B2C86DD30AA /* icon-js.svg */; };
+		7AC671A33DDB673114EB1D70 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5AC55DA0010ECEBF76C155 /* ContentView.swift */; };
+		83B380FB4016C90A1129F558 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E37815BA0A89D8A1577A6F0 /* Assets.xcassets */; };
+		8C4099C64C097F8B35EC9ADE /* icon-pptx.svg in Resources */ = {isa = PBXBuildFile; fileRef = 36A979993626A68DF8F730F6 /* icon-pptx.svg */; };
+		8CACC7FC61A7D7910FFD1CBF /* icon-txt.svg in Resources */ = {isa = PBXBuildFile; fileRef = B71536419530FCB0585C2396 /* icon-txt.svg */; };
+		8E762249EE836D5D066D4DA7 /* MenuItemIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9D8BE317D0A820220D7DBD /* MenuItemIcon.swift */; };
+		9C9C416F811B30E1003587B8 /* DirectoryAuthorizationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D77231A3AE54166D03B4C3B /* DirectoryAuthorizationStore.swift */; };
+		A18BD8C4232DD4571F005C39 /* icon-xlsx.svg in Resources */ = {isa = PBXBuildFile; fileRef = 34FD88CA9DEA35CA7F6CFC8F /* icon-xlsx.svg */; };
+		A1BF7C6A8C326813B760683A /* template-docx.docx in Resources */ = {isa = PBXBuildFile; fileRef = 4BE9AC7E66A82066E18E179C /* template-docx.docx */; };
+		A20F7AE4E2FD48309571F9F6 /* icon-file.svg in Resources */ = {isa = PBXBuildFile; fileRef = C1829A7B5ED033FAE816443C /* icon-file.svg */; };
+		A40FF225C982C6E685680395 /* icon-css.svg in Resources */ = {isa = PBXBuildFile; fileRef = FD124AA875035FDD158D709F /* icon-css.svg */; };
+		A53EF323A76554AA48C36293 /* FinderSyncController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EB25DEC07CF1532CD03DC0 /* FinderSyncController.swift */; };
+		ABE6253318548060CDAD8097 /* FileCreationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CF11BBE02066390E604D8C /* FileCreationService.swift */; };
+		AC2703FBF0E9ED15B518D764 /* MenuItemKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF638817574D54193C78BCC5 /* MenuItemKind.swift */; };
+		ACB125F6FB3C89F05F2A25C3 /* MenuPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D99B3FE3B0203BA510737A3 /* MenuPreferences.swift */; };
+		AE9F3DF82938E1DEC93C88D6 /* icon-swift.svg in Resources */ = {isa = PBXBuildFile; fileRef = 58A994046021088DDEBAE6EC /* icon-swift.svg */; };
+		B14F0567A78EDA9BA3EECADB /* MenuPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D99B3FE3B0203BA510737A3 /* MenuPreferences.swift */; };
+		B601FC9182C9E4AC1AD0A8AE /* RightMenuFinderExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F3A031B90EC4FD6785E5CE7A /* RightMenuFinderExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B77FECAA28EE0891E0A36E47 /* icon-js.svg in Resources */ = {isa = PBXBuildFile; fileRef = BC0F7BD4B3E78B2C86DD30AA /* icon-js.svg */; };
+		BFF2DC297B0FE8F26A7C8C72 /* quicknew-overview.svg in Resources */ = {isa = PBXBuildFile; fileRef = 349F117DE2EF64C54C0AC64A /* quicknew-overview.svg */; };
+		C35DAF66DBD2C80C1218FF3A /* AuthorizationStatusStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F294ED4EFE0AB517DF5D381A /* AuthorizationStatusStore.swift */; };
+		C60A1CC3262B4ACBD98C3B25 /* icon-yaml.svg in Resources */ = {isa = PBXBuildFile; fileRef = 33A52770482DE8084FFCD1E6 /* icon-yaml.svg */; };
+		CB1CB02655F1BD7865076B4F /* template-pptx.pptx in Resources */ = {isa = PBXBuildFile; fileRef = 4498380A06EAE5A7197F3879 /* template-pptx.pptx */; };
+		D230B28D3F1CA8C809C2BCA8 /* icon-md.svg in Resources */ = {isa = PBXBuildFile; fileRef = 1DCA894B45EBC5C99E31BA16 /* icon-md.svg */; };
+		D367E601E2F3E6F56DF1AF5B /* PreferencesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469FFE81A6648AD10D832E22 /* PreferencesStore.swift */; };
+		D7630879428DC7CC5E6055D0 /* FileCreationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7586EDBC1426C41706E911D1 /* FileCreationServiceTests.swift */; };
+		DEE0114F3EFF816A94B64052 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0030BE4CC5FAAA0CBB0235ED /* InfoPlist.strings */; };
+		DEE342943C2B0D1DCEC823EA /* RightMenuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C860C311A7FF038112A13FA /* RightMenuApp.swift */; };
+		E1784D810036B546A67C2300 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F284DB1FE72888629E7772B7 /* Localizable.strings */; };
+		E25B66D94F48B57D9CA5033A /* LanguageSettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F658DBFA78F3C0882F120E7F /* LanguageSettingsStore.swift */; };
+		E318485E19E26E1B63E68E7B /* template-xlsx.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 7809D3060F39AD5F84BE8CBC /* template-xlsx.xlsx */; };
+		E5E4F015BB84FC7D126F3551 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3D165CDBD46A230E64556DD /* InfoPlist.strings */; };
+		E89B50A1EFCA783D4ABED8EC /* icon-csv.svg in Resources */ = {isa = PBXBuildFile; fileRef = E2705BA34C34B11C7AE090AB /* icon-csv.svg */; };
+		EDF29E742D14C52839E02598 /* icon-rtf.svg in Resources */ = {isa = PBXBuildFile; fileRef = CCE0E849C7DE6807142D9371 /* icon-rtf.svg */; };
+		F2925AC7FC8F89465222EBBA /* MenuItemIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9D8BE317D0A820220D7DBD /* MenuItemIcon.swift */; };
+		F34D4E5B5DD8E876AB476556 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A7CBFA82302117B09920795 /* Localizable.strings */; };
+		F3E9DF0DB8E139A0D669905D /* icon-sh.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4C71C884F55A9B31DDD06D0A /* icon-sh.svg */; };
+		F9A9183F756DFFD72218AEAE /* icon-css.svg in Resources */ = {isa = PBXBuildFile; fileRef = FD124AA875035FDD158D709F /* icon-css.svg */; };
+		FC6412C4A0CBA50C483A71E1 /* icon-swift.svg in Resources */ = {isa = PBXBuildFile; fileRef = 58A994046021088DDEBAE6EC /* icon-swift.svg */; };
+		FFB2B38297622D6CB8BD637B /* icon-csv.svg in Resources */ = {isa = PBXBuildFile; fileRef = E2705BA34C34B11C7AE090AB /* icon-csv.svg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		16AC579848262A16226C00E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ECE3DD534355CAC3BBA62F73 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB3CEB93DE3783AF09807A18;
+			remoteInfo = RightMenuFinderExtension;
+		};
+		9CE2993CEA7D77FF61116D94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ECE3DD534355CAC3BBA62F73 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 69C7313F5E11B93FC128BC62;
+			remoteInfo = RightMenu;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7BF8AC4527AF3DD53C8F7856 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B601FC9182C9E4AC1AD0A8AE /* RightMenuFinderExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0B56E23823EAC7E614CCFABE /* icon-docx.svg */ = {isa = PBXFileReference; path = "icon-docx.svg"; sourceTree = "<group>"; };
+		0C992184F11471A92A53FB3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0C9D8BE317D0A820220D7DBD /* MenuItemIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemIcon.swift; sourceTree = "<group>"; };
+		10A4ED1A0D7CB2A8CAFECF00 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		12EB25DEC07CF1532CD03DC0 /* FinderSyncController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderSyncController.swift; sourceTree = "<group>"; };
+		1B5AC55DA0010ECEBF76C155 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1D77231A3AE54166D03B4C3B /* DirectoryAuthorizationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryAuthorizationStore.swift; sourceTree = "<group>"; };
+		1DCA894B45EBC5C99E31BA16 /* icon-md.svg */ = {isa = PBXFileReference; path = "icon-md.svg"; sourceTree = "<group>"; };
+		2E37815BA0A89D8A1577A6F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		33A52770482DE8084FFCD1E6 /* icon-yaml.svg */ = {isa = PBXFileReference; path = "icon-yaml.svg"; sourceTree = "<group>"; };
+		349F117DE2EF64C54C0AC64A /* quicknew-overview.svg */ = {isa = PBXFileReference; path = "quicknew-overview.svg"; sourceTree = "<group>"; };
+		34FD88CA9DEA35CA7F6CFC8F /* icon-xlsx.svg */ = {isa = PBXFileReference; path = "icon-xlsx.svg"; sourceTree = "<group>"; };
+		36A979993626A68DF8F730F6 /* icon-pptx.svg */ = {isa = PBXFileReference; path = "icon-pptx.svg"; sourceTree = "<group>"; };
+		4498380A06EAE5A7197F3879 /* template-pptx.pptx */ = {isa = PBXFileReference; path = "template-pptx.pptx"; sourceTree = "<group>"; };
+		469FFE81A6648AD10D832E22 /* PreferencesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesStore.swift; sourceTree = "<group>"; };
+		4BE9AC7E66A82066E18E179C /* template-docx.docx */ = {isa = PBXFileReference; path = "template-docx.docx"; sourceTree = "<group>"; };
+		4C71C884F55A9B31DDD06D0A /* icon-sh.svg */ = {isa = PBXFileReference; path = "icon-sh.svg"; sourceTree = "<group>"; };
+		507AD09F0972C4D96FE4B403 /* RightMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RightMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		51E77C2312885B161AF24732 /* RightMenuAppStore.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RightMenuAppStore.entitlements; sourceTree = "<group>"; };
+		58A994046021088DDEBAE6EC /* icon-swift.svg */ = {isa = PBXFileReference; path = "icon-swift.svg"; sourceTree = "<group>"; };
+		5DDE276776B8458606CAA766 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5E8014985B643DF09B9A560F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		68D82B5A52BECF4DD97861D0 /* RightMenuFinderExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RightMenuFinderExtension.entitlements; sourceTree = "<group>"; };
+		6D99B3FE3B0203BA510737A3 /* MenuPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPreferences.swift; sourceTree = "<group>"; };
+		718F62F8B97C6FAB3CD8C266 /* icon-folder.svg */ = {isa = PBXFileReference; path = "icon-folder.svg"; sourceTree = "<group>"; };
+		7586EDBC1426C41706E911D1 /* FileCreationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileCreationServiceTests.swift; sourceTree = "<group>"; };
+		7809D3060F39AD5F84BE8CBC /* template-xlsx.xlsx */ = {isa = PBXFileReference; path = "template-xlsx.xlsx"; sourceTree = "<group>"; };
+		7A31F66AAEB740E39BC84C30 /* icon-html.svg */ = {isa = PBXFileReference; path = "icon-html.svg"; sourceTree = "<group>"; };
+		813AE9C12FDC8F9AAEAADD48 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		84B475870364CB7ACD82F802 /* RightMenuFinderExtensionAppStore.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RightMenuFinderExtensionAppStore.entitlements; sourceTree = "<group>"; };
+		87B16CB7AC52A8293B3F1AA7 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		8D759696713BC33D6F2B6B3F /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		8F15B29BB5E927F1FF5DF82B /* ExtensionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionManager.swift; sourceTree = "<group>"; };
+		9641AE81F9D693DDDD007654 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		96857537E597D9A33219C87C /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		9A71D4BD175ACBF9166BFC20 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		9C860C311A7FF038112A13FA /* RightMenuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightMenuApp.swift; sourceTree = "<group>"; };
+		A6CF11BBE02066390E604D8C /* FileCreationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileCreationService.swift; sourceTree = "<group>"; };
+		A6E4CCE129F4AFC83D70E660 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		AE9271954E56E57CD7724675 /* icon-json.svg */ = {isa = PBXFileReference; path = "icon-json.svg"; sourceTree = "<group>"; };
+		B67F62078FD95310BA55D734 /* RightMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RightMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B71536419530FCB0585C2396 /* icon-txt.svg */ = {isa = PBXFileReference; path = "icon-txt.svg"; sourceTree = "<group>"; };
+		BC0F7BD4B3E78B2C86DD30AA /* icon-js.svg */ = {isa = PBXFileReference; path = "icon-js.svg"; sourceTree = "<group>"; };
+		BE12E0540E0B5F3F0199564A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C1829A7B5ED033FAE816443C /* icon-file.svg */ = {isa = PBXFileReference; path = "icon-file.svg"; sourceTree = "<group>"; };
+		C85ADDBCB151897FBB611DF9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		CCE0E849C7DE6807142D9371 /* icon-rtf.svg */ = {isa = PBXFileReference; path = "icon-rtf.svg"; sourceTree = "<group>"; };
+		DF638817574D54193C78BCC5 /* MenuItemKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemKind.swift; sourceTree = "<group>"; };
+		E2705BA34C34B11C7AE090AB /* icon-csv.svg */ = {isa = PBXFileReference; path = "icon-csv.svg"; sourceTree = "<group>"; };
+		EEE68CFCA5EAF64247D83056 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F034A43A1412AFA968DD9EF9 /* RightMenuDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RightMenuDebug.entitlements; sourceTree = "<group>"; };
+		F294ED4EFE0AB517DF5D381A /* AuthorizationStatusStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationStatusStore.swift; sourceTree = "<group>"; };
+		F3239D5333BA5C0DED837C3A /* RightMenuFinderExtensionDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RightMenuFinderExtensionDebug.entitlements; sourceTree = "<group>"; };
+		F3A031B90EC4FD6785E5CE7A /* RightMenuFinderExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RightMenuFinderExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F658DBFA78F3C0882F120E7F /* LanguageSettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSettingsStore.swift; sourceTree = "<group>"; };
+		F853C689095BBE8312C637A2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		FCDB84CC2970BC2A6779C0BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		FD124AA875035FDD158D709F /* icon-css.svg */ = {isa = PBXFileReference; path = "icon-css.svg"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		2265DC2A36D68FF9212E99FB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				349F117DE2EF64C54C0AC64A /* quicknew-overview.svg */,
+				4BE9AC7E66A82066E18E179C /* template-docx.docx */,
+				4498380A06EAE5A7197F3879 /* template-pptx.pptx */,
+				7809D3060F39AD5F84BE8CBC /* template-xlsx.xlsx */,
+				669DD2C4DEBC133232630C47 /* FileIcons */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3FA8B49E8E9107A96168EAE6 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				8D759696713BC33D6F2B6B3F /* AppConstants.swift */,
+				1D77231A3AE54166D03B4C3B /* DirectoryAuthorizationStore.swift */,
+				A6CF11BBE02066390E604D8C /* FileCreationService.swift */,
+				0C9D8BE317D0A820220D7DBD /* MenuItemIcon.swift */,
+				DF638817574D54193C78BCC5 /* MenuItemKind.swift */,
+				6D99B3FE3B0203BA510737A3 /* MenuPreferences.swift */,
+				469FFE81A6648AD10D832E22 /* PreferencesStore.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		669DD2C4DEBC133232630C47 /* FileIcons */ = {
+			isa = PBXGroup;
+			children = (
+				FD124AA875035FDD158D709F /* icon-css.svg */,
+				E2705BA34C34B11C7AE090AB /* icon-csv.svg */,
+				0B56E23823EAC7E614CCFABE /* icon-docx.svg */,
+				C1829A7B5ED033FAE816443C /* icon-file.svg */,
+				718F62F8B97C6FAB3CD8C266 /* icon-folder.svg */,
+				7A31F66AAEB740E39BC84C30 /* icon-html.svg */,
+				BC0F7BD4B3E78B2C86DD30AA /* icon-js.svg */,
+				AE9271954E56E57CD7724675 /* icon-json.svg */,
+				1DCA894B45EBC5C99E31BA16 /* icon-md.svg */,
+				36A979993626A68DF8F730F6 /* icon-pptx.svg */,
+				CCE0E849C7DE6807142D9371 /* icon-rtf.svg */,
+				4C71C884F55A9B31DDD06D0A /* icon-sh.svg */,
+				58A994046021088DDEBAE6EC /* icon-swift.svg */,
+				B71536419530FCB0585C2396 /* icon-txt.svg */,
+				34FD88CA9DEA35CA7F6CFC8F /* icon-xlsx.svg */,
+				33A52770482DE8084FFCD1E6 /* icon-yaml.svg */,
+			);
+			path = FileIcons;
+			sourceTree = "<group>";
+		};
+		85CED1291D15B1CCD477BAE3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B67F62078FD95310BA55D734 /* RightMenu.app */,
+				F3A031B90EC4FD6785E5CE7A /* RightMenuFinderExtension.appex */,
+				507AD09F0972C4D96FE4B403 /* RightMenuTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		99023937CF13DC6A14EFDADE /* RightMenuTests */ = {
+			isa = PBXGroup;
+			children = (
+				7586EDBC1426C41706E911D1 /* FileCreationServiceTests.swift */,
+			);
+			path = RightMenuTests;
+			sourceTree = "<group>";
+		};
+		BC8247D390C447B5B12E04BC /* RightMenuFinderExtension */ = {
+			isa = PBXGroup;
+			children = (
+				12EB25DEC07CF1532CD03DC0 /* FinderSyncController.swift */,
+				FCDB84CC2970BC2A6779C0BC /* Info.plist */,
+				68D82B5A52BECF4DD97861D0 /* RightMenuFinderExtension.entitlements */,
+				84B475870364CB7ACD82F802 /* RightMenuFinderExtensionAppStore.entitlements */,
+				F3239D5333BA5C0DED837C3A /* RightMenuFinderExtensionDebug.entitlements */,
+				0030BE4CC5FAAA0CBB0235ED /* InfoPlist.strings */,
+				F284DB1FE72888629E7772B7 /* Localizable.strings */,
+			);
+			path = RightMenuFinderExtension;
+			sourceTree = "<group>";
+		};
+		C5BED552A67AF79F938BC5CB /* RightMenu */ = {
+			isa = PBXGroup;
+			children = (
+				2E37815BA0A89D8A1577A6F0 /* Assets.xcassets */,
+				F294ED4EFE0AB517DF5D381A /* AuthorizationStatusStore.swift */,
+				1B5AC55DA0010ECEBF76C155 /* ContentView.swift */,
+				8F15B29BB5E927F1FF5DF82B /* ExtensionManager.swift */,
+				0C992184F11471A92A53FB3F /* Info.plist */,
+				F658DBFA78F3C0882F120E7F /* LanguageSettingsStore.swift */,
+				9C860C311A7FF038112A13FA /* RightMenuApp.swift */,
+				51E77C2312885B161AF24732 /* RightMenuAppStore.entitlements */,
+				F034A43A1412AFA968DD9EF9 /* RightMenuDebug.entitlements */,
+				EEE68CFCA5EAF64247D83056 /* SettingsView.swift */,
+				D3D165CDBD46A230E64556DD /* InfoPlist.strings */,
+				4A7CBFA82302117B09920795 /* Localizable.strings */,
+			);
+			path = RightMenu;
+			sourceTree = "<group>";
+		};
+		FEEB86DB77746112BD2F5599 = {
+			isa = PBXGroup;
+			children = (
+				2265DC2A36D68FF9212E99FB /* Resources */,
+				C5BED552A67AF79F938BC5CB /* RightMenu */,
+				BC8247D390C447B5B12E04BC /* RightMenuFinderExtension */,
+				99023937CF13DC6A14EFDADE /* RightMenuTests */,
+				3FA8B49E8E9107A96168EAE6 /* Shared */,
+				85CED1291D15B1CCD477BAE3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		52F771D66C58589FD5149017 /* RightMenuTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50846FED56705B2B38908C0F /* Build configuration list for PBXNativeTarget "RightMenuTests" */;
+			buildPhases = (
+				4E8737D3E864A1154243CC18 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				70DC2FFF022EAAE9E2DA97E2 /* PBXTargetDependency */,
+			);
+			name = RightMenuTests;
+			packageProductDependencies = (
+			);
+			productName = RightMenuTests;
+			productReference = 507AD09F0972C4D96FE4B403 /* RightMenuTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		69C7313F5E11B93FC128BC62 /* RightMenu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC2F96190DFA7F67EDA9C1BC /* Build configuration list for PBXNativeTarget "RightMenu" */;
+			buildPhases = (
+				9A4C8EEC4220676D48FBC56A /* Sources */,
+				69DC4963802335E502D0D1E9 /* Resources */,
+				7BF8AC4527AF3DD53C8F7856 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				61849E85C25A6361BF8C511C /* PBXTargetDependency */,
+			);
+			name = RightMenu;
+			packageProductDependencies = (
+			);
+			productName = RightMenu;
+			productReference = B67F62078FD95310BA55D734 /* RightMenu.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BB3CEB93DE3783AF09807A18 /* RightMenuFinderExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3EBDAF30A800D1C25080C99F /* Build configuration list for PBXNativeTarget "RightMenuFinderExtension" */;
+			buildPhases = (
+				37688BF5AB937F96722085F3 /* Sources */,
+				5FE1B462545D5E2991FFF253 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RightMenuFinderExtension;
+			packageProductDependencies = (
+			);
+			productName = RightMenuFinderExtension;
+			productReference = F3A031B90EC4FD6785E5CE7A /* RightMenuFinderExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ECE3DD534355CAC3BBA62F73 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					52F771D66C58589FD5149017 = {
+						DevelopmentTeam = 3AVKA6L8FE;
+						ProvisioningStyle = Automatic;
+					};
+					69C7313F5E11B93FC128BC62 = {
+						DevelopmentTeam = 3AVKA6L8FE;
+						ProvisioningStyle = Automatic;
+					};
+					BB3CEB93DE3783AF09807A18 = {
+						DevelopmentTeam = 3AVKA6L8FE;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 0BE15796D6D12EC503C2BF3D /* Build configuration list for PBXProject "RightMenu" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+				"zh-Hans",
+				"zh-Hant",
+			);
+			mainGroup = FEEB86DB77746112BD2F5599;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 85CED1291D15B1CCD477BAE3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				69C7313F5E11B93FC128BC62 /* RightMenu */,
+				BB3CEB93DE3783AF09807A18 /* RightMenuFinderExtension */,
+				52F771D66C58589FD5149017 /* RightMenuTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5FE1B462545D5E2991FFF253 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEE0114F3EFF816A94B64052 /* InfoPlist.strings in Resources */,
+				E1784D810036B546A67C2300 /* Localizable.strings in Resources */,
+				F9A9183F756DFFD72218AEAE /* icon-css.svg in Resources */,
+				FFB2B38297622D6CB8BD637B /* icon-csv.svg in Resources */,
+				76C62DE1606490DC5EBADBFA /* icon-docx.svg in Resources */,
+				1BFBDC3DCB5914E3E87E81A6 /* icon-file.svg in Resources */,
+				4A47DFD0BF04B4CDF390F675 /* icon-folder.svg in Resources */,
+				74446320EF1B31776D2B593A /* icon-html.svg in Resources */,
+				B77FECAA28EE0891E0A36E47 /* icon-js.svg in Resources */,
+				1233473C92D127081699B478 /* icon-json.svg in Resources */,
+				160CCF3305B1A4596EE5851C /* icon-md.svg in Resources */,
+				617401D4A06A1203C07EB2D7 /* icon-pptx.svg in Resources */,
+				EDF29E742D14C52839E02598 /* icon-rtf.svg in Resources */,
+				5F0E5CEF9562D12772A709FA /* icon-sh.svg in Resources */,
+				FC6412C4A0CBA50C483A71E1 /* icon-swift.svg in Resources */,
+				4DC63F0080F244F6817DBD44 /* icon-txt.svg in Resources */,
+				3BC14A8785835B2AEAF1588E /* icon-xlsx.svg in Resources */,
+				C60A1CC3262B4ACBD98C3B25 /* icon-yaml.svg in Resources */,
+				208E27826C1A6C0402A571AB /* quicknew-overview.svg in Resources */,
+				678567CCFC9391E2F512240E /* template-docx.docx in Resources */,
+				CB1CB02655F1BD7865076B4F /* template-pptx.pptx in Resources */,
+				14DE494315ED8789E5BC1C27 /* template-xlsx.xlsx in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69DC4963802335E502D0D1E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83B380FB4016C90A1129F558 /* Assets.xcassets in Resources */,
+				E5E4F015BB84FC7D126F3551 /* InfoPlist.strings in Resources */,
+				F34D4E5B5DD8E876AB476556 /* Localizable.strings in Resources */,
+				A40FF225C982C6E685680395 /* icon-css.svg in Resources */,
+				E89B50A1EFCA783D4ABED8EC /* icon-csv.svg in Resources */,
+				2164C2C078D1591083D75A0B /* icon-docx.svg in Resources */,
+				A20F7AE4E2FD48309571F9F6 /* icon-file.svg in Resources */,
+				46F998EC9055C1C16284ECE5 /* icon-folder.svg in Resources */,
+				5E2C79C0D61215BB48A99533 /* icon-html.svg in Resources */,
+				79AA5A85608BE08362AD26F9 /* icon-js.svg in Resources */,
+				39343730C41743726BFCE979 /* icon-json.svg in Resources */,
+				D230B28D3F1CA8C809C2BCA8 /* icon-md.svg in Resources */,
+				8C4099C64C097F8B35EC9ADE /* icon-pptx.svg in Resources */,
+				0F73CC4B7655A38B660E64B8 /* icon-rtf.svg in Resources */,
+				F3E9DF0DB8E139A0D669905D /* icon-sh.svg in Resources */,
+				AE9F3DF82938E1DEC93C88D6 /* icon-swift.svg in Resources */,
+				8CACC7FC61A7D7910FFD1CBF /* icon-txt.svg in Resources */,
+				A18BD8C4232DD4571F005C39 /* icon-xlsx.svg in Resources */,
+				43C509E987D6070D359B11E9 /* icon-yaml.svg in Resources */,
+				BFF2DC297B0FE8F26A7C8C72 /* quicknew-overview.svg in Resources */,
+				A1BF7C6A8C326813B760683A /* template-docx.docx in Resources */,
+				563AE025173AEB2AAEE76977 /* template-pptx.pptx in Resources */,
+				E318485E19E26E1B63E68E7B /* template-xlsx.xlsx in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		37688BF5AB937F96722085F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B23AEEEA7E42B9514DAE66D /* AppConstants.swift in Sources */,
+				9C9C416F811B30E1003587B8 /* DirectoryAuthorizationStore.swift in Sources */,
+				5CC9605290DBA709771EAAAF /* FileCreationService.swift in Sources */,
+				A53EF323A76554AA48C36293 /* FinderSyncController.swift in Sources */,
+				8E762249EE836D5D066D4DA7 /* MenuItemIcon.swift in Sources */,
+				AC2703FBF0E9ED15B518D764 /* MenuItemKind.swift in Sources */,
+				ACB125F6FB3C89F05F2A25C3 /* MenuPreferences.swift in Sources */,
+				D367E601E2F3E6F56DF1AF5B /* PreferencesStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E8737D3E864A1154243CC18 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7630879428DC7CC5E6055D0 /* FileCreationServiceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A4C8EEC4220676D48FBC56A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				324AEB2F562AAE3E50CCEEF7 /* AppConstants.swift in Sources */,
+				C35DAF66DBD2C80C1218FF3A /* AuthorizationStatusStore.swift in Sources */,
+				7AC671A33DDB673114EB1D70 /* ContentView.swift in Sources */,
+				1AB4BE0492051CA3711BFD2A /* DirectoryAuthorizationStore.swift in Sources */,
+				427D83CFBCFC975F14DFF484 /* ExtensionManager.swift in Sources */,
+				ABE6253318548060CDAD8097 /* FileCreationService.swift in Sources */,
+				E25B66D94F48B57D9CA5033A /* LanguageSettingsStore.swift in Sources */,
+				F2925AC7FC8F89465222EBBA /* MenuItemIcon.swift in Sources */,
+				0CDD2FC00743C0B7B2B781E3 /* MenuItemKind.swift in Sources */,
+				B14F0567A78EDA9BA3EECADB /* MenuPreferences.swift in Sources */,
+				3A6C178232B196F0FC0CEF21 /* PreferencesStore.swift in Sources */,
+				DEE342943C2B0D1DCEC823EA /* RightMenuApp.swift in Sources */,
+				246D0594FCD1D411BEAA91F8 /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		61849E85C25A6361BF8C511C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BB3CEB93DE3783AF09807A18 /* RightMenuFinderExtension */;
+			targetProxy = 16AC579848262A16226C00E5 /* PBXContainerItemProxy */;
+		};
+		70DC2FFF022EAAE9E2DA97E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 69C7313F5E11B93FC128BC62 /* RightMenu */;
+			targetProxy = 9CE2993CEA7D77FF61116D94 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0030BE4CC5FAAA0CBB0235ED /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5E8014985B643DF09B9A560F /* en */,
+				813AE9C12FDC8F9AAEAADD48 /* zh-Hans */,
+				9A71D4BD175ACBF9166BFC20 /* zh-Hant */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4A7CBFA82302117B09920795 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE12E0540E0B5F3F0199564A /* en */,
+				10A4ED1A0D7CB2A8CAFECF00 /* zh-Hans */,
+				87B16CB7AC52A8293B3F1AA7 /* zh-Hant */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		D3D165CDBD46A230E64556DD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9641AE81F9D693DDDD007654 /* en */,
+				F853C689095BBE8312C637A2 /* zh-Hans */,
+				96857537E597D9A33219C87C /* zh-Hant */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F284DB1FE72888629E7772B7 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5DDE276776B8458606CAA766 /* en */,
+				C85ADDBCB151897FBB611DF9 /* zh-Hans */,
+				A6E4CCE129F4AFC83D70E660 /* zh-Hant */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1F9D9FDCFD148E29672275A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RightMenu/RightMenuDebug.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = RightMenu/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.panjing.RightMenu;
+				PRODUCT_NAME = RightMenu;
+				REGISTER_WITH_LAUNCH_SERVICES = NO;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		37831E8F3D3A6C0CEA95E45F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 3AVKA6L8FE;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.panjing.RightMenuTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RightMenu.app/Contents/MacOS/RightMenu";
+			};
+			name = Debug;
+		};
+		746F34F26C870C3467CE4F60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 3AVKA6L8FE;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.panjing.RightMenuTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RightMenu.app/Contents/MacOS/RightMenu";
+			};
+			name = Release;
+		};
+		75F8CBB83856DC092229A7AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 3AVKA6L8FE;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		832164C7A3DCF972709875F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 3AVKA6L8FE;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		96D1F8BE9EE32BB7EF256EE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = RightMenuFinderExtension/RightMenuFinderExtensionAppStore.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = RightMenuFinderExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.panjing.RightMenu.FinderExtension;
+				PRODUCT_NAME = RightMenuFinderExtension;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		B42869981ED87DFDAFAFB590 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RightMenu/RightMenuAppStore.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = RightMenu/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.panjing.RightMenu;
+				PRODUCT_NAME = RightMenu;
+				REGISTER_WITH_LAUNCH_SERVICES = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E1360F200F816C1D8C1864B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = RightMenuFinderExtension/RightMenuFinderExtensionDebug.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = RightMenuFinderExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.panjing.RightMenu.FinderExtension;
+				PRODUCT_NAME = RightMenuFinderExtension;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0BE15796D6D12EC503C2BF3D /* Build configuration list for PBXProject "RightMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75F8CBB83856DC092229A7AA /* Debug */,
+				832164C7A3DCF972709875F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		3EBDAF30A800D1C25080C99F /* Build configuration list for PBXNativeTarget "RightMenuFinderExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1360F200F816C1D8C1864B8 /* Debug */,
+				96D1F8BE9EE32BB7EF256EE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		50846FED56705B2B38908C0F /* Build configuration list for PBXNativeTarget "RightMenuTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37831E8F3D3A6C0CEA95E45F /* Debug */,
+				746F34F26C870C3467CE4F60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		CC2F96190DFA7F67EDA9C1BC /* Build configuration list for PBXNativeTarget "RightMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F9D9FDCFD148E29672275A1 /* Debug */,
+				B42869981ED87DFDAFAFB590 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ECE3DD534355CAC3BBA62F73 /* Project object */;
+}
