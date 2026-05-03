@@ -5,19 +5,23 @@ final class PreferencesStore: @unchecked Sendable {
     static let shared = PreferencesStore()
 
     private let defaults: UserDefaults
+    private let sharedDefaults: UserDefaults?
     private let lock = NSLock()
 
     init() {
         self.defaults = .standard
+        self.sharedDefaults = UserDefaults(suiteName: AppConstants.appGroupIdentifier)
     }
 
     init(defaults: UserDefaults) {
         self.defaults = defaults
+        self.sharedDefaults = nil
     }
 
     init(url: URL) {
         let suiteName = "test.\(abs(url.path.hashValue))"
         self.defaults = UserDefaults(suiteName: suiteName) ?? .standard
+        self.sharedDefaults = nil
     }
 
     func object(forKey key: String) -> Any? {
@@ -49,9 +53,16 @@ final class PreferencesStore: @unchecked Sendable {
         defer { lock.unlock() }
         defaults.set(value, forKey: key)
         defaults.synchronize()
+        sharedDefaults?.set(value, forKey: key)
+        sharedDefaults?.synchronize()
     }
 
     func reload() {
+    }
+
+    static var sharedForExtension: PreferencesStore {
+        let sharedDefaults = UserDefaults(suiteName: AppConstants.appGroupIdentifier) ?? .standard
+        return PreferencesStore(defaults: sharedDefaults)
     }
 
     static var realUserHomeDirectory: URL {

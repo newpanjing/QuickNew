@@ -2,20 +2,27 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject private var authorization: AuthorizationStatusStore
+    @EnvironmentObject private var directoryStore: MonitoredDirectoryStore
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 28) {
-                header
+        NavigationSplitView {
+            List {
+                NavigationLink {
+                    overviewView
+                } label: {
+                    Label(L10n.string("nav.authorization"), systemImage: authorization.isReady ? "checkmark.seal" : "lock")
+                }
 
-                extensionStatusCard
-
-                steps
-
-                supportedTypesCard
+                NavigationLink {
+                    DirectoryManagementView()
+                        .environmentObject(directoryStore)
+                } label: {
+                    Label(L10n.string("nav.locations"), systemImage: "folder")
+                }
             }
-            .padding(32)
-            .frame(maxWidth: 760, alignment: .leading)
+            .navigationSplitViewColumnWidth(min: 180, ideal: 200)
+        } detail: {
+            overviewView
         }
         .toolbar {
             ToolbarItemGroup {
@@ -36,6 +43,19 @@ struct ContentView: View {
         }
         .onAppear {
             authorization.refresh()
+        }
+    }
+
+    private var overviewView: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 28) {
+                header
+                extensionStatusCard
+                steps
+                supportedTypesCard
+            }
+            .padding(32)
+            .frame(maxWidth: 760, alignment: .leading)
         }
     }
 

@@ -1,8 +1,8 @@
 import SwiftUI
 
-// MARK: - AppDelegate
-
 final class AppDelegate: NSObject, NSApplicationDelegate {
+    var directoryStore: MonitoredDirectoryStore?
+
     func applicationWillFinishLaunching(_ notification: Notification) {
         let event = NSAppleEventManager.shared().currentAppleEvent
         if let event = event,
@@ -15,30 +15,37 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     func application(_ application: NSApplication, open urls: [URL]) {
         guard let url = urls.first, url.scheme == "quicknew" else { return }
-        handleQuickNewURL(url)
+
+        NSApp.setActivationPolicy(.accessory)
+        for window in NSApp.windows {
+            window.orderOut(nil)
+        }
+        NSApp.activate(ignoringOtherApps: true)
+
+        QuickNewURLHandler.handle(url, directoryStore: directoryStore)
+
+        NSApp.setActivationPolicy(.regular)
+        NSApp.hide(nil)
     }
 }
-
-// MARK: - App
 
 @main
 struct RightMenuApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @StateObject private var authorization = AuthorizationStatusStore()
+    @StateObject private var directoryStore = MonitoredDirectoryStore()
     @StateObject private var language = LanguageSettingsStore()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(authorization)
+                .environmentObject(directoryStore)
                 .environmentObject(language)
                 .id(language.revision)
                 .frame(minWidth: 680, minHeight: 500)
                 .onReceive(NotificationCenter.default.publisher(for: L10n.languageChangedNotification)) { _ in
                     language.refreshText()
-                }
-                .onOpenURL { url in
-                    handleQuickNewURL(url)
                 }
         }
         .windowStyle(.hiddenTitleBar)
@@ -55,43 +62,18 @@ struct RightMenuApp: App {
     }
 }
 
-// MARK: - URL Handling
-
-@MainActor
-private func handleQuickNewURL(_ url: URL) {
-    guard url.scheme == "quicknew" else { return }
-
-    NSApp.setActivationPolicy(.accessory)
-    for window in NSApp.windows {
-        window.orderOut(nil)
-    }
-    NSApp.activate(ignoringOtherApps: true)
-
-    QuickNewURLHandler.handle(url)
-
-    NSApp.setActivationPolicy(.regular)
-    NSApp.hide(nil)
-}
-
-// MARK: - URL Handler
-
 @MainActor
 enum QuickNewURLHandler {
-    static func handle(_ url: URL) {
-        guard url.host == "create" else { return }
+    static func handle(_ url: URL, directoryStore: MonitoredDirectoryStore?) {
+        guard url.scheme == "quicknew", url.host == "create" else { return }
 
         guard let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
               let kindParam = components.queryItems?.first(where: { $0.name == "kind" })?.value,
               let kind = MenuItemKind(rawValue: kindParam),
-              let dirParam = components.queryItems?.first(where: { $0.name == "dir" })?.value else {
-            NSLog("[QuickNew] Invalid URL parameters")
-            return
-        }
+              let dirParam = components.queryItems?.first(where: { $0.name == "dir" })?.value else { return }
 
-        NSLog("[QuickNew] Creating \(kind.rawValue) in \(dirParam)")
         let directory = URL(fileURLWithPath: dirParam)
 
-        // If directory is not yet authorized, prompt once via NSOpenPanel
         if !DirectoryAuthorizationStore.shared.hasSavedAuthorizationCovering(directory) {
             let panel = NSOpenPanel()
             panel.title = AppConstants.appDisplayName
@@ -114,17 +96,16 @@ enum QuickNewURLHandler {
                     relativeTo: nil
                 )
                 DirectoryAuthorizationStore.shared.saveBookmarkData(bookmarkData, forPath: selectedURL.path)
+                directoryStore?.refreshAuthorizedDirectories()
             } catch {
                 NSLog("[QuickNew] Bookmark creation failed: \(error)")
             }
             if didAccess { selectedURL.stopAccessingSecurityScopedResource() }
         }
 
-        // Create the file
         do {
             let service = FileCreationService(authorizationStore: DirectoryAuthorizationStore.shared)
             let result = try service.create(kind, in: directory)
-            NSLog("[QuickNew] Created: \(result.url.path)")
             NSWorkspace.shared.activateFileViewerSelecting([result.url])
         } catch {
             NSLog("[QuickNew] File creation failed: \(error)")

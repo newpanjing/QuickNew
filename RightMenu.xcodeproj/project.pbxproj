@@ -46,6 +46,7 @@
 		A1BF7C6A8C326813B760683A /* template-docx.docx in Resources */ = {isa = PBXBuildFile; fileRef = 4BE9AC7E66A82066E18E179C /* template-docx.docx */; };
 		A20F7AE4E2FD48309571F9F6 /* icon-file.svg in Resources */ = {isa = PBXBuildFile; fileRef = C1829A7B5ED033FAE816443C /* icon-file.svg */; };
 		A40FF225C982C6E685680395 /* icon-css.svg in Resources */ = {isa = PBXBuildFile; fileRef = FD124AA875035FDD158D709F /* icon-css.svg */; };
+		A4E524820F0A2E3F19E4B37C /* MonitoredDirectoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55B81BFF3E566056731C6C1 /* MonitoredDirectoryStore.swift */; };
 		A53EF323A76554AA48C36293 /* FinderSyncController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EB25DEC07CF1532CD03DC0 /* FinderSyncController.swift */; };
 		ABE6253318548060CDAD8097 /* FileCreationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CF11BBE02066390E604D8C /* FileCreationService.swift */; };
 		AC2703FBF0E9ED15B518D764 /* MenuItemKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF638817574D54193C78BCC5 /* MenuItemKind.swift */; };
@@ -72,6 +73,7 @@
 		F2925AC7FC8F89465222EBBA /* MenuItemIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9D8BE317D0A820220D7DBD /* MenuItemIcon.swift */; };
 		F34D4E5B5DD8E876AB476556 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A7CBFA82302117B09920795 /* Localizable.strings */; };
 		F3E9DF0DB8E139A0D669905D /* icon-sh.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4C71C884F55A9B31DDD06D0A /* icon-sh.svg */; };
+		F82CA87303C17DBCEF8F6B2F /* DirectoryManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DA6486AC5AA878FE136F48 /* DirectoryManagementView.swift */; };
 		F9A9183F756DFFD72218AEAE /* icon-css.svg in Resources */ = {isa = PBXBuildFile; fileRef = FD124AA875035FDD158D709F /* icon-css.svg */; };
 		FC6412C4A0CBA50C483A71E1 /* icon-swift.svg in Resources */ = {isa = PBXBuildFile; fileRef = 58A994046021088DDEBAE6EC /* icon-swift.svg */; };
 		FFB2B38297622D6CB8BD637B /* icon-csv.svg in Resources */ = {isa = PBXBuildFile; fileRef = E2705BA34C34B11C7AE090AB /* icon-csv.svg */; };
@@ -154,6 +156,7 @@
 		BC0F7BD4B3E78B2C86DD30AA /* icon-js.svg */ = {isa = PBXFileReference; path = "icon-js.svg"; sourceTree = "<group>"; };
 		BE12E0540E0B5F3F0199564A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C1829A7B5ED033FAE816443C /* icon-file.svg */ = {isa = PBXFileReference; path = "icon-file.svg"; sourceTree = "<group>"; };
+		C1DA6486AC5AA878FE136F48 /* DirectoryManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryManagementView.swift; sourceTree = "<group>"; };
 		C85ADDBCB151897FBB611DF9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		CCE0E849C7DE6807142D9371 /* icon-rtf.svg */ = {isa = PBXFileReference; path = "icon-rtf.svg"; sourceTree = "<group>"; };
 		DF638817574D54193C78BCC5 /* MenuItemKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemKind.swift; sourceTree = "<group>"; };
@@ -163,6 +166,7 @@
 		F294ED4EFE0AB517DF5D381A /* AuthorizationStatusStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationStatusStore.swift; sourceTree = "<group>"; };
 		F3239D5333BA5C0DED837C3A /* RightMenuFinderExtensionDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RightMenuFinderExtensionDebug.entitlements; sourceTree = "<group>"; };
 		F3A031B90EC4FD6785E5CE7A /* RightMenuFinderExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RightMenuFinderExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F55B81BFF3E566056731C6C1 /* MonitoredDirectoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitoredDirectoryStore.swift; sourceTree = "<group>"; };
 		F658DBFA78F3C0882F120E7F /* LanguageSettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSettingsStore.swift; sourceTree = "<group>"; };
 		F853C689095BBE8312C637A2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		FCDB84CC2970BC2A6779C0BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -257,9 +261,11 @@
 				2E37815BA0A89D8A1577A6F0 /* Assets.xcassets */,
 				F294ED4EFE0AB517DF5D381A /* AuthorizationStatusStore.swift */,
 				1B5AC55DA0010ECEBF76C155 /* ContentView.swift */,
+				C1DA6486AC5AA878FE136F48 /* DirectoryManagementView.swift */,
 				8F15B29BB5E927F1FF5DF82B /* ExtensionManager.swift */,
 				0C992184F11471A92A53FB3F /* Info.plist */,
 				F658DBFA78F3C0882F120E7F /* LanguageSettingsStore.swift */,
+				F55B81BFF3E566056731C6C1 /* MonitoredDirectoryStore.swift */,
 				9C860C311A7FF038112A13FA /* RightMenuApp.swift */,
 				51E77C2312885B161AF24732 /* RightMenuAppStore.entitlements */,
 				F034A43A1412AFA968DD9EF9 /* RightMenuDebug.entitlements */,
@@ -481,12 +487,14 @@
 				C35DAF66DBD2C80C1218FF3A /* AuthorizationStatusStore.swift in Sources */,
 				7AC671A33DDB673114EB1D70 /* ContentView.swift in Sources */,
 				1AB4BE0492051CA3711BFD2A /* DirectoryAuthorizationStore.swift in Sources */,
+				F82CA87303C17DBCEF8F6B2F /* DirectoryManagementView.swift in Sources */,
 				427D83CFBCFC975F14DFF484 /* ExtensionManager.swift in Sources */,
 				ABE6253318548060CDAD8097 /* FileCreationService.swift in Sources */,
 				E25B66D94F48B57D9CA5033A /* LanguageSettingsStore.swift in Sources */,
 				F2925AC7FC8F89465222EBBA /* MenuItemIcon.swift in Sources */,
 				0CDD2FC00743C0B7B2B781E3 /* MenuItemKind.swift in Sources */,
 				B14F0567A78EDA9BA3EECADB /* MenuPreferences.swift in Sources */,
+				A4E524820F0A2E3F19E4B37C /* MonitoredDirectoryStore.swift in Sources */,
 				3A6C178232B196F0FC0CEF21 /* PreferencesStore.swift in Sources */,
 				DEE342943C2B0D1DCEC823EA /* RightMenuApp.swift in Sources */,
 				246D0594FCD1D411BEAA91F8 /* SettingsView.swift in Sources */,

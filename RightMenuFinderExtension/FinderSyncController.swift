@@ -9,6 +9,10 @@ final class FinderSyncController: FIFinderSync {
         .folder, .text, .markdown, .richText, .word, .excel, .powerpoint, .csv,
     ]
 
+    private let fileCreationService = FileCreationService(
+        authorizationStore: DirectoryAuthorizationStore(store: .sharedForExtension)
+    )
+
     // MARK: - Init
 
     override init() {
@@ -41,6 +45,7 @@ final class FinderSyncController: FIFinderSync {
                 keyEquivalent: ""
             )
             item.representedObject = kind.rawValue
+            item.target = self
             item.image = MenuItemIcon.nsImage(for: kind, size: NSSize(width: 16, height: 16))
             submenu.addItem(item)
         }
@@ -57,7 +62,7 @@ final class FinderSyncController: FIFinderSync {
 
     // MARK: - Actions
 
-    @objc private func createFile(_ sender: NSMenuItem) {
+    @objc func createFile(_ sender: NSMenuItem) {
         guard let rawValue = sender.representedObject as? String,
               let kind = MenuItemKind(rawValue: rawValue) else {
             NSLog("[QuickNew] Invalid menu item")
@@ -68,15 +73,12 @@ final class FinderSyncController: FIFinderSync {
             return
         }
 
-        let urlStr = "quicknew://create?kind=\(kind.rawValue)&dir=\(targetDir.path)"
-        guard let url = URL(string: urlStr) else {
-            NSLog("[QuickNew] Failed to create URL")
-            return
+        do {
+            let result = try fileCreationService.create(kind, in: targetDir)
+            NSWorkspace.shared.activateFileViewerSelecting([result.url])
+        } catch {
+            NSLog("[QuickNew] Failed to create %@: %@", kind.title, error.localizedDescription)
         }
-
-        NSLog("[QuickNew] Opening URL: \(urlStr)")
-        let result = NSWorkspace.shared.open(url)
-        NSLog("[QuickNew] NSWorkspace.open result: \(result)")
     }
 
     // MARK: - Helpers
